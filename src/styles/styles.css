@@ -1,0 +1,288 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.notes-app {
+  position: relative;
+  width: 100%;
+  padding: 19px 0 19px 0;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+
+.search-notes {
+  position: relative;
+  width: 100%;
+  padding: 18px 0 18px 0;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.search-notes input {
+  width: 300px;
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+.search-notes .btn-add {
+  display: inline;
+  margin-left: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-add img {
+  display: inline-block;
+  width: 30px;
+  position: absolute;
+  top: 2;
+  padding-left: 5px;
+}
+
+.add-notes {
+  position: absolute;
+  width: 450px;
+  padding-top: 10px;
+  z-index: -1;
+  transition: all ease-out 0.2s;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.add-notes-title {
+  display: inline-flex;
+  width: 100%;
+}
+
+.add-notes-title img {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.add-notes form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.show-form {
+  animation-name: show-form;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.hidden-form {
+  animation-name: hidden-form;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+form p {
+  text-align: end;
+  margin-bottom: 10px;
+  font-size: 0.8em;
+}
+
+form input {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #000000;
+  font-size: 16px;
+}
+
+form textarea {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid #000000;
+}
+
+form button {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+input::placeholder {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+textarea::placeholder {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.alert-input {
+  display: flex;
+  padding: 8px 5px 8px 5px; 
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+.d-none {
+  display: none;
+}
+
+.notes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: -2;
+  width: 830px;
+  transition: all ease-out 0.2s;
+}
+
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.notes-app-list-item {
+  width: 265px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  margin: 10px 25px;
+}
+  
+.notes-app-list-item article {
+  margin: 10px 17px;
+  height: 250px;
+}
+
+.notes-app-list-item header {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #000000;
+}
+
+article .notes-date {
+  font-weight: lighter;
+  font-size: 0.9em;
+}
+
+.up-notes {
+  align-items: center;
+  animation-name: up-notes;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+  
+.down-notes {
+  animation-name: down-notes;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+  
+.notes-action {
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+  border-width: 1px;
+  border-top-style: solid;
+  border-top-color: #000000;
+}
+  
+.btn-delete {
+  flex-grow: 1;
+  padding: 10px;
+  color: #cd0000;
+  cursor: pointer;
+  border-width: 1px;
+  border-right-style: solid;
+  border-right-color: #000000;
+}
+  
+.btn-move-notes {
+  flex-grow: 1;
+  padding: 10px;
+}
+  
+.not-found__notes {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@keyframes show-form {
+  from {
+    margin-top: -355px;
+  }
+  to {
+    margin-top: 5px;
+  }
+}
+
+@keyframes hidden-form {
+  form {
+    margin-top: 0;
+  }
+  to {
+    margin-top: -420px;
+  }
+}
+
+@keyframes up-notes {
+  from {
+    margin-top: 400px;
+  }
+  to {
+    margin-top: 25px;
+  }
+}
+
+@keyframes down-notes {
+  form {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 400px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .search-notes input {
+    width: 290px;
+  }
+  .add-notes {
+    width: 350px;
+  }
+  .notes {
+    width: 100%;
+  }
+  .notes-list {
+    flex-direction: column;
+    align-content: center;
+  }
+}
